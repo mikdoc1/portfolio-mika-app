@@ -1,6 +1,6 @@
 import { Container, Row } from 'reactstrap';
 
-const MastHead = ({ imagePath, children }) => (
+const Mast = ({ imagePath, children }) => (
   <div className="masthead" style={{ backgroundImage: `url(${imagePath})` }}>
     <div className="overlay"></div>
     <Container>
@@ -13,4 +13,4 @@ const MastHead = ({ imagePath, children }) => (
   </div>
 );
 
-export default MastHead;
+export default Mast;

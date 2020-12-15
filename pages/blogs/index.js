@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout/Layout';
 import BasePage from '../../components/BasePage';
 import { useGetUser } from '../../actions/user';
-import MastHead from '../../components/Shared/MastHead';
+import Mast from '../../components/Shared/Mast';
 import { Row, Col } from 'reactstrap';
 import BlogItem from '../../components/BlogItem';
 import { useSelector } from 'react-redux';
@@ -13,10 +13,10 @@ const Blogs = () => {
   const { data, loading } = useGetUser();
   return (
     <Layout navClass="transparent" className="blog-listing-page" user={data} loading={loading}>
-      <MastHead imagePath="/images/home-bg.jpg">
+      <Mast imagePath="/images/home-bg.jpg">
         <h1>Fresh Blogs</h1>
         <span className="subheading">Programming, travelling...</span>
-      </MastHead>
+      </Mast>
       <BasePage className="blog-body" title="Newest Blogs - Mika Shahin">
         <Row>
           {blogs.map((blog) => {
