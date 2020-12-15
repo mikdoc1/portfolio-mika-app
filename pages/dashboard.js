@@ -3,7 +3,7 @@ import { wrapper } from '../redux/store';
 import BasePage from '../components/BasePage';
 import withAuth from '../hoc/withAuth';
 import { Row, Col, Button } from 'reactstrap';
-import Masthead from '../components/shared/Masthead';
+import MastHead from '../components/Shared/MastHead';
 import auth0 from '../utils/auth0';
 import axios from 'axios';
 import Link from 'next/link';
@@ -62,7 +62,7 @@ const Dashboard = ({ user, loading }) => {
   );
   return (
     <Layout navClass="transparent" user={user} loading={loading}>
-      <Masthead imagePath="/images/home-bg.jpg">
+      <MastHead imagePath="/images/home-bg.jpg">
         <h1>Blogs Dashboard</h1>
         <span className="subheading">
           Let's write some nice blog today{' '}
@@ -70,7 +70,7 @@ const Dashboard = ({ user, loading }) => {
             <Button color="primary">Create a new Blog</Button>
           </Link>
         </span>
-      </Masthead>
+      </MastHead>
       <BasePage className="blog-user-page">
         <Row>
           <Col md="6" className="mx-auto text-center">
