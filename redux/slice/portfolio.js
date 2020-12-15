@@ -50,6 +50,7 @@ export const deletePortfolio = createAsyncThunk(
 export const getPortfolios = createAsyncThunk('portfolioSlice/getPortfolios', async (_, { rejectWithValue }) => {
   try {
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/portfolios`);
+    console.log('data', data);
     return { portfolios: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });

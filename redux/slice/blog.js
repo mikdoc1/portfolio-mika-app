@@ -50,7 +50,7 @@ export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async (
 
 export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs`);
+    const { data } = await axios.get(`http://localhost:3001/api/v1/blogs`);
     return { blogs: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
