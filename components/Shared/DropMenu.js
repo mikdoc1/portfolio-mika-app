@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-const PortButtonDropdown = (props) => {
+const DropMenu = (props) => {
   const { items } = props;
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -30,4 +30,4 @@ const PortButtonDropdown = (props) => {
   );
 };
 
-export default PortButtonDropdown;
+export default DropMenu;

@@ -7,7 +7,7 @@ import Mast from '../components/Shared/Mast';
 import auth0 from '../utils/auth0';
 import axios from 'axios';
 import Link from 'next/link';
-import PortDropdown from '../components/shared/Dropdown';
+import DropMenu from '../components/Shared/DropMenu';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMyBlogs, changeBlogStatus } from '../redux/slice/blog';
@@ -55,7 +55,7 @@ const Dashboard = ({ user, loading }) => {
               <Link href={`/blogs/editor/${blog._id}`}>
                 <a>{blog.title}</a>
               </Link>
-              <PortDropdown items={createOptions(blog)} />
+              <DropMenu items={createOptions(blog)} />
             </li>
           ))}
     </ul>
