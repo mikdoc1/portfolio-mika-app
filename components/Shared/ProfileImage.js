@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const ProfilePic = ({ image, title, date }) => (
+const ProfileImage = ({ image, title, date }) => (
   <div className="media avatar-box mb-2">
     <img className="mr-2" src={image} />
     <div className="media-body align-self-center">
@@ -10,4 +10,4 @@ const ProfilePic = ({ image, title, date }) => (
   </div>
 );
 
-export default ProfilePic;
+export default ProfileImage;

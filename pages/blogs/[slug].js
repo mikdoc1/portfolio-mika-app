@@ -8,7 +8,7 @@ import { wrapper } from '../../redux/store';
 import { getBlogBySlug } from '../../redux/slice/blog';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import ProfilePic from '../../components/shared/ProfilePic';
+import ProfileImage from '../../components/shared/ProfileImage';
 
 const BlogDetail = () => {
   const router = useRouter();
@@ -23,7 +23,7 @@ const BlogDetail = () => {
       <BasePage className="slate-container" title={`${blog?.title} - Mika Shahin`} metaDescription={blog?.subTitle}>
         <Row>
           <Col md={{ size: 8, offset: 2 }}>
-            <ProfilePic title={author?.name} image={author?.picture} date={blog?.createdAt} />
+            <ProfileImage title={author?.name} image={author?.picture} date={blog?.createdAt} />
             <hr />
             <SlateView initialContent={blog?.content} />
           </Col>
