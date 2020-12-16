@@ -14,8 +14,9 @@ const initialState = {
 
 export const createBlog = createAsyncThunk('blogSlice/createBlog', async ({ blog }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.post('/api/v1/blogs/create', blog);
-    return { blog: data };
+    // const { data } = await axios.post('/api/v1/blogs/create', blog);
+    // return { blog: data };
+    return { blog: {} };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
@@ -23,8 +24,9 @@ export const createBlog = createAsyncThunk('blogSlice/createBlog', async ({ blog
 
 export const editBlog = createAsyncThunk('blogSlice/editBlog', async ({ id, blog }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.patch('/api/v1/blogs/edit', { id, blog });
-    return { blog: data };
+    // const { data } = await axios.patch('/api/v1/blogs/edit', { id, blog });
+    // return { blog: data };
+    return { blog: {} };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
@@ -32,8 +34,9 @@ export const editBlog = createAsyncThunk('blogSlice/editBlog', async ({ id, blog
 
 export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/${id}`);
-    return { blog: data };
+    // const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/${id}`);
+    // return { blog: data };
+    return { blog: {} };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
@@ -41,8 +44,9 @@ export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { re
 
 export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async ({ slug }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/s/${slug}`);
-    return { blog: data.blog, author: data.author };
+    // const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/s/${slug}`);
+    // return { blog: data.blog, author: data.author };
+    return { blog: {}, author: {} };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
@@ -61,12 +65,13 @@ export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejec
 
 export const getMyBlogs = createAsyncThunk('blogSlice/getMyBlogs', async ({ accessToken }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/me`, {
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-      },
-    });
-    return { blogs: data };
+    // const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/me`, {
+    //   headers: {
+    //     authorization: `Bearer ${accessToken}`,
+    //   },
+    // });
+    // return { blogs: data };
+    return { blogs: [] };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
@@ -76,8 +81,9 @@ export const changeBlogStatus = createAsyncThunk(
   'blogSlice/changeBlogStatus',
   async ({ id, status }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.patch('/api/v1/blogs/edit', { id, status });
-      return { blog: data };
+      // const { data } = await axios.patch('/api/v1/blogs/edit', { id, status });
+      // return { blog: data };
+      return { blog: {} };
     } catch (err) {
       return rejectWithValue({ error: err.message });
     }

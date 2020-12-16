@@ -12,11 +12,11 @@ const BlogEditor = ({ user, loading }) => {
   const { meta } = useSelector((state) => state.blogSlice);
   const dispatch = useDispatch();
   const saveBlog = async (blog) => {
-    const resAction = await dispatch(createBlog({ blog }));
-    if (createBlog.fulfilled.match(resAction)) {
-      const payload = resAction.payload;
-      router.push(`/blogs/editor/${payload.blog._id}`);
-    }
+    // const resAction = await dispatch(createBlog({ blog }));
+    // if (createBlog.fulfilled.match(resAction)) {
+    //   const payload = resAction.payload;
+    //   router.push(`/blogs/editor/${payload.blog._id}`);
+    // }
   };
 
   if (meta.error) {

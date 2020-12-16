@@ -16,7 +16,7 @@ const Dashboard = ({ user, loading }) => {
   const { blogs, meta } = useSelector((state) => state.blogSlice);
   const dispatch = useDispatch();
   const onChangeBlogStatus = async (id, status) => {
-    const resAction = await dispatch(changeBlogStatus({ id, status }));
+    // const resAction = await dispatch(changeBlogStatus({ id, status }));
   };
 
   const createOption = (blogStatus) => {
@@ -87,14 +87,14 @@ const Dashboard = ({ user, loading }) => {
   );
 };
 
-export const getServerSideProps = wrapper.getServerSideProps(async ({ req, store }) => {
-  const result = await auth0.getSession(req);
-  if (result) {
-    await store.dispatch(getMyBlogs({ accessToken: result.accessToken }));
-  }
-  return {
-    props: {},
-  };
-});
+// export const getServerSideProps = wrapper.getServerSideProps(async ({ req, store }) => {
+//   const result = await auth0.getSession(req);
+//   if (result) {
+//     await store.dispatch(getMyBlogs({ accessToken: result.accessToken }));
+//   }
+//   return {
+//     props: {},
+//   };
+// });
 
 export default withAuth(Dashboard)('admin');

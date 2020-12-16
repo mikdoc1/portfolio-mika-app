@@ -33,22 +33,22 @@ const BlogDetail = () => {
   );
 };
 
-export async function getStaticPaths() {
-  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs`);
+// export async function getStaticPaths() {
+//   const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs`);
 
-  const paths = data.map((blog) => ({ params: { slug: blog.blog.slug } }));
-  return {
-    paths,
-    fallback: true,
-  };
-}
+//   const paths = data.map((blog) => ({ params: { slug: blog.blog.slug } }));
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// }
 
-export const getStaticProps = wrapper.getStaticProps(async ({ params, store }) => {
-  await store.dispatch(getBlogBySlug({ slug: params.slug }));
-  return {
-    props: {},
-    revalidate: 10,
-  };
-});
+// export const getStaticProps = wrapper.getStaticProps(async ({ params, store }) => {
+//   await store.dispatch(getBlogBySlug({ slug: params.slug }));
+//   return {
+//     props: {},
+//     revalidate: 10,
+//   };
+// });
 
 export default BlogDetail;
