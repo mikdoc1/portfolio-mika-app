@@ -15,15 +15,15 @@ const BlogUpdateEditor = ({ user, loading }) => {
   const { id } = router.query;
   useEffect(() => {
     if (id) {
-      // dispatch(getBlog({ id }));
+      dispatch(getBlog({ id }));
     }
   }, [id, dispatch]);
 
   const onUpdateBlog = async (data) => {
-    // const resAction = await dispatch(editBlog({ id, blog: data }));
-    // if (editBlog.fulfilled.match(resAction)) {
-    //   toast.success('Blog updated!');
-    // }
+    const resAction = await dispatch(editBlog({ id, blog: data }));
+    if (editBlog.fulfilled.match(resAction)) {
+      toast.success('Blog updated!');
+    }
   };
 
   if (meta.error) {
