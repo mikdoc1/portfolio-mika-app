@@ -32,7 +32,7 @@ export const editBlog = createAsyncThunk('blogSlice/editBlog', async ({ id, blog
 
 export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/${id}`);
+    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/${id}`);
     return { blog: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
@@ -41,7 +41,7 @@ export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { re
 
 export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async ({ slug }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/s/${slug}`);
+    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/s/${slug}`);
     return { blog: data.blog, author: data.author };
   } catch (err) {
     return rejectWithValue({ error: err.message });
@@ -51,6 +51,7 @@ export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async (
 export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejectWithValue }) => {
   try {
     const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs`);
+    console.log('DATA', data);
     return { blogs: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
