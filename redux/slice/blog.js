@@ -14,9 +14,8 @@ const initialState = {
 
 export const createBlog = createAsyncThunk('blogSlice/createBlog', async ({ blog }, { rejectWithValue }) => {
   try {
-    // const { data } = await axios.post('/api/v1/blogs/create', blog);
-    // return { blog: data };
-    return { blog: {} };
+    const { data } = await axios.post('/api/v1/blogs/create', blog);
+    return { blog: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
