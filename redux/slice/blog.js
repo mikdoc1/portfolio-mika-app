@@ -59,13 +59,12 @@ export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejec
 
 export const getMyBlogs = createAsyncThunk('blogSlice/getMyBlogs', async ({ accessToken }, { rejectWithValue }) => {
   try {
-    // const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/me`, {
-    //   headers: {
-    //     authorization: `Bearer ${accessToken}`,
-    //   },
-    // });
-    // return { blogs: data };
-    return { blogs: [] };
+    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/me`, {
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return { blogs: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }
