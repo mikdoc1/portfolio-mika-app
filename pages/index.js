@@ -31,7 +31,7 @@ export default function Home() {
       navClass="transparent"
       className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}
     >
-      <BasePage indexPage title="Portfolio - Filip Jerga">
+      <BasePage indexPage title="Portfolio - Mika Shahin">
         <div className="main-section">
           <div className="background-image">
             <img src="/images/background-index.png" />
@@ -71,7 +71,7 @@ export default function Home() {
               <Col md="6" className="hero-welcome-wrapper">
                 <div className="hero-welcome-text">
                   <h1>
-                    Welcome to the portfolio website of Filip Jerga. Get informed, collaborate and discover projects I
+                    Welcome to the portfolio website of Mika Shahin. Get informed, collaborate and discover projects I
                     was working on through the years!
                   </h1>
                 </div>

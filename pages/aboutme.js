@@ -8,7 +8,7 @@ const AboutMe = () => {
 
   return (
     <Layout user={user} loading={loading}>
-      <BasePage title="About Me - Filip Jerga" className="about-page" canonicalPath="/about">
+      <BasePage title="About Me - Mika Shahin" className="about-page" canonicalPath="/about">
         <Row className="mt-5">
           <Col md="6">
             <div className="left-side">
@@ -19,7 +19,7 @@ const AboutMe = () => {
           </Col>
           <Col md="6">
             <div>
-              <p>My name is Filip Jerga and I am an experienced software engineer and freelance developer. </p>
+              <p>My name is Mika Shahin and I am an experienced software engineer and freelance developer. </p>
               <p>
                 I have a Master's degree in Artificial Intelligence and several years of experience working on a wide
                 range of technologies and projects from C++ development for ultrasound devices to modern mobile and web
