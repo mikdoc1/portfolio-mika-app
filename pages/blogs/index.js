@@ -10,9 +10,9 @@ import { wrapper } from '../../redux/store';
 
 const Blogs = () => {
   const { blogs } = useSelector((state) => state.blogSlice);
-  const { data, loading } = useGetUser();
+  const { user, loading } = useGetUser();
   return (
-    <Layout navClass="transparent" className="blog-listing-page" user={data} loading={loading}>
+    <Layout navClass="transparent" className="blog-listing-page" user={user} loading={loading}>
       <Mast imagePath="/images/home-bg.jpg">
         <h1>Fresh Blogs</h1>
         <span className="subheading">Programming, travelling...</span>

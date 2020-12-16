@@ -32,7 +32,7 @@ export const editBlog = createAsyncThunk('blogSlice/editBlog', async ({ id, blog
 
 export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/${id}`);
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/${id}`);
     return { blog: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
@@ -41,7 +41,7 @@ export const getBlog = createAsyncThunk('blogSlice/getBlog', async ({ id }, { re
 
 export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async ({ slug }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/s/${slug}`);
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/s/${slug}`);
     return { blog: data.blog, author: data.author };
   } catch (err) {
     return rejectWithValue({ error: err.message });
@@ -50,7 +50,7 @@ export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async (
 
 export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs`);
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs`);
     return { blogs: data };
   } catch (err) {
     return rejectWithValue({ error: err.message });
@@ -59,7 +59,7 @@ export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejec
 
 export const getMyBlogs = createAsyncThunk('blogSlice/getMyBlogs', async ({ accessToken }, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs/me`, {
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_PORTFOLIO_API_URL}/blogs/me`, {
       headers: {
         authorization: `Bearer ${accessToken}`,
       },

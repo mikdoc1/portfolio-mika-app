@@ -13,13 +13,13 @@ import AvatarComponent from '../../components/Shared/AvatarComponent';
 const BlogDetail = () => {
   const router = useRouter();
   const { blog, author } = useSelector((state) => state.blogSlice);
-  const { data, loading } = useGetUser();
+  const { user, loading } = useGetUser();
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
   return (
-    <Layout user={data} loading={loading}>
+    <Layout user={user} loading={loading}>
       <BasePage className="slate-container" title={`${blog?.title} - Mika Shahin`} metaDescription={blog?.subTitle}>
         <Row>
           <Col md={{ size: 8, offset: 2 }}>
