@@ -50,9 +50,10 @@ export const getBlogBySlug = createAsyncThunk('blogSlice/getBlogBySlug', async (
 
 export const getBlogs = createAsyncThunk('blogSlice/getBlogs', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs`);
-    console.log('DATA', data);
-    return { blogs: data };
+    // const { data } = await axios.get(`https://portfolio-mika-api.herokuapp.com/api/v1/blogs`);
+    // console.log('DATA', data);
+    // return { blogs: data };
+    return { blogs: [] };
   } catch (err) {
     return rejectWithValue({ error: err.message });
   }

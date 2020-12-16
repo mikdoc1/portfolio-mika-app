@@ -33,12 +33,12 @@ const Blogs = () => {
   );
 };
 
-export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  await store.dispatch(getBlogs());
-  return {
-    props: {},
-    revalidate: 10,
-  };
-});
+// export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
+//   await store.dispatch(getBlogs());
+//   return {
+//     props: {},
+//     revalidate: 10,
+//   };
+// });
 
 export default Blogs;
